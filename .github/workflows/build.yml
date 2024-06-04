@@ -78,8 +78,15 @@ jobs:
           CIBW_BEFORE_BUILD: |
             pip install --upgrade pip
             pip install numpy swig
+            echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             swig -swiglib
+            echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+            swig -swiglib | xargs ls -l
+            echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+            export SWIG_EXECUTABLE=$(swig-swiglib)
+            echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             echo $SWIG_EXECUTABLE
+            
         run: |
           python -m pip install -U pip cibuildwheel==2.18.1
           python -m cibuildwheel --output-dir dist
