@@ -79,11 +79,13 @@ jobs:
             pip install --upgrade pip
             pip install numpy swig
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+            which swig
+            echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             swig -swiglib
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             swig -swiglib | xargs ls -l
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
-            export SWIG_EXECUTABLE=$(swig -swiglib)
+            export SWIG_EXECUTABLE=$(which swig)
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             echo $SWIG_EXECUTABLE
             
