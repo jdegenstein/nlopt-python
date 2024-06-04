@@ -77,6 +77,7 @@ jobs:
             which swig
           CIBW_BEFORE_BUILD: |
             pip install --upgrade pip
+            pip install numpy
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             which swig
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
