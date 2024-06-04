@@ -83,7 +83,7 @@ jobs:
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             swig -swiglib | xargs ls -l
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
-            export SWIG_EXECUTABLE=$(swig-swiglib)
+            export SWIG_EXECUTABLE=$(swig -swiglib)
             echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
             echo $SWIG_EXECUTABLE
             
